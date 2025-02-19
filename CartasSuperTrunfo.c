@@ -107,5 +107,9 @@ int main()
     printf("PIB: %.2f bilhões de Reais\n", pib2);  // Adicionado formatação para 2 casas decimais
     printf("Quantidade de Pontos Turísticos: %d \n", p_tur2);
 
+    printf(" \n");          
+    printf(" \n");
+    printf(" \n");
+
     return 0;
 }

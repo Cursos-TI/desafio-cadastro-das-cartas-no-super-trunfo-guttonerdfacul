@@ -11,7 +11,7 @@ int main()
     // Variáveis
     char pais[7] = "BRASIL";
     char c_estado1, c_estado2;
-    char n_estado1[30], n_estado2[30];            // Nome do estado com 1 caractere de A a H
+    char n_estado1[30], n_estado2[30];          // Nome do estado com 1 caractere de A a H
     char c_cidade1[5], c_cidade2[5];            // O código da cidade deverá ser o código do estado (de A a Z) + um número de 01 a 04 (com 2 dígitos)
     char n_cidade1[30], n_cidade2[30];          // Nome da cidade 
     int pop1, pop2;                             // População
@@ -75,7 +75,7 @@ int main()
     
     // CONFIRMAÇÃO DOS DADOS INSERIDOS
     // CARTA 1
-    
+
     printf("As informaçoes inseridas são:\n");
     printf(" \n");          
     printf(" \n");

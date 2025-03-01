@@ -18,6 +18,8 @@ int main()
     double area1, area2;                            // Área (mudado de float para double)
     double pib1, pib2;                              // PIB (mudado de float para double)
     int p_tur1, p_tur2;                             // Número de Pontos turísticos
+    double dens_pop1, dens_pop2;                    // Densidade Populacional
+    double pib_perc1, pib_perc2;                    // PIB Per Capta
 
     
     // ENTRADA DE DADOS DA PRIMEIRA CARTA
@@ -27,11 +29,11 @@ int main()
     printf("* Insira o 'CÓDIGO' do ESTADO entre A a H: ");
     scanf(" %c", &c_estado1);
     printf("* Nome real deste ESTADO?: ");
-    scanf(" %s", &n_estado1);  
+    scanf(" %s", n_estado1);  
     printf("* Insira o 'CÓDIGO' da CIDADE (Código do estado que você escolheu + um número de 01 a 04 com 2 dígitos): ");
-    scanf(" %s", &c_cidade1);  
+    scanf(" %s", c_cidade1);  
     printf("* Nome real desta CIDADE?: ");
-    scanf(" %s", &n_cidade1);  
+    scanf(" %s", n_cidade1);  
     printf("* Qual a POPULAÇÃO de ** %s **: ", n_cidade1);
     scanf(" %d", &pop1);
     printf("* Qual a ÁREA de ** %s **: ", n_cidade1);
@@ -54,11 +56,11 @@ int main()
     printf("* Insira o 'CÓDIGO' do ESTADO entre A a H: ");
     scanf(" %c", &c_estado2);
     printf("* Nome real deste ESTADO?: ");
-    scanf(" %s", &n_estado2);  
+    scanf(" %s", n_estado2);  
     printf("* Insira o 'CÓDIGO' da CIDADE (Código do estado que você escolheu + um número de 01 a 04 com 2 dígitos): ");
-    scanf(" %s", &c_cidade2);  
+    scanf(" %s", c_cidade2);  
     printf("* Nome real desta CIDADE?: ");
-    scanf(" %s", &n_cidade2);  
+    scanf(" %s", n_cidade2);  
     printf("* Qual a POPULAÇÃO de ** %s **: ", n_cidade2);
     scanf(" %d", &pop2);
     printf("* Qual a ÁREA de ** %s **: ", n_cidade2);
@@ -67,6 +69,16 @@ int main()
     scanf(" %lf", &pib2);                           // Mudado de %f para %lf
     printf("* Quantos pontos turísticos tem ** %s **: ", n_cidade2);
     scanf("%d", &p_tur2);
+
+    // CALCULO DENSIDADE POPULACIONAL
+
+    dens_pop1 = (double) pop1 / area1;                       // Densid. pop. carta01
+    dens_pop2 = (double) pop2 / area2;                       // Densid. pop, carta02
+
+    // CALCULO PIB PER CAPTA
+
+    pib_perc1 = (pib1 * 1000000000) / (double) pop1;        // PIB per capta carta01 (convertido para reais)
+    pib_perc2 = (pib2 * 1000000000) / (double) pop2;        // PIB per capta carta02 (convertido para reais)
 
     // PULANDO ALGUMAS LINHAS
 
@@ -85,6 +97,8 @@ int main()
     printf("Área: %.2f Km²\n", area1);              // %f continua funcionando para double
     printf("PIB: %.2f bilhões de Reais\n", pib1);   // %f continua funcionando para double
     printf("Quantidade de Pontos Turísticos: %d \n", p_tur1);
+    printf("Densidade Populacional: %.2f hab/km²\n", dens_pop1);
+    printf("PIB per Capita: R$ %.2f\n", pib_perc1);
 
     // PULANDO ALGUMAS LINHAS
 
@@ -103,6 +117,8 @@ int main()
     printf("Área: %.2f Km²\n", area2);              // %f continua funcionando para double
     printf("PIB: %.2f bilhões de Reais\n", pib2);   // %f continua funcionando para double
     printf("Quantidade de Pontos Turísticos: %d \n", p_tur2);
-
+    printf("Densidade Populacional: %.2f hab/km²\n", dens_pop2);
+    printf("PIB per Capita: R$ %.2f\n", pib_perc2);
+    
     return 0;
 }
